@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Launch Radar — value × odds, full price graded held-out</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header>
+  <div class="masthead">
+    <h1>LAUNCH RADAR</h1>
+    <p class="tag">Implied value = fitted value if it launches &times; launch odds — both fitted on the snapshot, full price graded held-out.</p>
+    <p class="prov" id="prov"></p>
+  </div>
+  <div id="verdict" class="verdict"></div>
+  <div id="audit" class="audit"></div>
+  <div id="acctbar" class="acctbar"></div>
+</header>
+<nav id="tabs">
+  <button data-view="board" class="on">Board + evidence</button>
+  <button data-view="farm">Farm view</button>
+  <span class="spacer"></span>
+  <input id="q" type="search" placeholder="Filter by name, slug or category">
+  <select id="seg">
+    <option value="">All segments</option><option>watchlist</option><option>off-list</option><option>below-floor</option>
+  </select>
+  <select id="verd">
+    <option value="">All verdicts</option><option>FARM</option><option>THIN</option><option>SKIP</option>
+  </select>
+</nav>
+<main>
+  <section id="evidence"></section>
+  <section id="boardwrap">
+    <table id="board">
+      <thead><tr>
+        <th data-k="rank">#</th><th data-k="name">Protocol</th><th data-k="tvl_usd">TVL</th>
+        <th data-k="change_7d">7d %</th><th data-k="value_if_launches_usd">Value if launches</th>
+        <th data-k="launch_odds_pct">Odds</th><th data-k="implied_value_usd">Implied</th>
+        <th>Band P25–P75</th><th data-k="verdict">Verdict · net</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+    <p id="rowcount" class="note"></p>
+    <div id="farmpanel"></div>
+  </section>
+  <section id="detail" hidden></section>
+</main>
+<footer id="foot" class="note"></footer>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
